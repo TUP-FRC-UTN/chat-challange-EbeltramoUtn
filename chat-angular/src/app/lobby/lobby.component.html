@@ -1,0 +1,24 @@
+<div class="container-fluid m-2">
+    <div class="card my-2">
+        <div class="card-header">
+          Sala de chat
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Conversacion</h5>
+          
+          @for (mensaje of mensajes; track $index) {
+            <p>[{{mensaje.tiempo | date: "dd/MM/yy hh:mm"}}] {{mensaje.usuario.name}}: {{mensaje.mensaje}}</p>
+          }
+          
+        </div>
+    </div>
+    
+    <div class="row">
+        @for (item of usuarios; track $index) {
+            <div class="col-12 col-md-6 mb-3">
+                <app-chat [usuario]="item" (eventMensaje)="agregarMensaje($event)"/>
+            </div>
+        }
+        
+    </div>
+</div>
