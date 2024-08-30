@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">
+      Usuario: {{usuario.name}}
+    </div>
+    <div class="card-body">
+      <p class="card-text">Mensaje</p>
+      <div class="form-floating">
+        <textarea [(ngModel)]="mensaje.mensaje" class="form-control" placeholder="Mensaje" id="floatingTextarea2" style="height: 100px"></textarea>
+      </div>
+      <a href="#" class="btn btn-primary mt-2" (click)="enviar()">Enviar</a>
+    </div>
+  </div>
